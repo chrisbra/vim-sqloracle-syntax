@@ -24,7 +24,7 @@ syn keyword sqlKeyword	index initial initrans into is level link logging loop
 syn keyword sqlKeyword	maxextents maxtrans mode modify monitoring
 syn keyword sqlKeyword	nocache nocompress nologging noparallel nowait of offline on online start
 syn keyword sqlKeyword	parallel successful synonym table tablespace then to trigger uid
-syn keyword sqlKeyword	unique user validate values view whenever
+syn keyword sqlKeyword	unique user validate values view when whenever
 syn keyword sqlKeyword	where with option order pctfree pctused privileges procedure
 syn keyword sqlKeyword	public resource return row rowlabel rownum rows
 syn keyword sqlKeyword	session share size smallint type using
