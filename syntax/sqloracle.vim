@@ -4,7 +4,7 @@
 " Repository:   https://github.com/chrisbra/vim-sqloracle-syntax
 " License:      Vim
 " Previous Maintainer:	Paul Moore
-" Last Change:	2015 Oct 21
+" Last Change:	2016 Apr 3
 
 if exists("b:current_syntax")
   finish
@@ -28,6 +28,7 @@ syn keyword sqlKeyword	unique user validate values view when whenever
 syn keyword sqlKeyword	where with option order pctfree pctused privileges procedure
 syn keyword sqlKeyword	public resource return row rowlabel rownum rows
 syn keyword sqlKeyword	session share size smallint type using
+syn keyword sqlKeyword	join cross inner outer left right
 
 syn keyword sqlOperator	not and or
 syn keyword sqlOperator	in any some all between exists
