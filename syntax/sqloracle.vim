@@ -61,6 +61,13 @@ syn region sqlString	matchgroup=Quote start=+q'{+  end=+}'+
 syn region sqlString	matchgroup=Quote start=+q'(+  end=+)'+
 syn region sqlString	matchgroup=Quote start=+q'\[+  end=+]'+
 
+" Quotes:
+syn region sqlQuote	start=+[qQ]'\z([^\[(<{]\)+  end=+\z1'+
+syn region sqlQuote	start=+[qQ]'\[+ end=+\]'+
+syn region sqlQuote	start=+[qQ]'(+  end=+)'+
+syn region sqlQuote	start=+[qQ]'<+  end=+>'+
+syn region sqlQuote	start=+[qQ]'{+  end=+}'+
+
 " Numbers:
 syn match sqlNumber	"-\=\<\d*\.\=[0-9_]\>"
 
@@ -138,6 +145,7 @@ HiLink sqlOperator	sqlStatement
 HiLink sqlSpecial	Special
 HiLink sqlStatement	Statement
 HiLink sqlString	String
+HiLink sqlQuote String
 HiLink sqlType		Type
 HiLink sqlTodo		Todo
 
