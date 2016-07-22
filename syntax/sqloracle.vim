@@ -51,6 +51,13 @@ syn keyword sqlType	mlslabel number raw rowid varchar varchar2 varray
 syn region sqlString	start=+"+  skip=+\\\\\|\\"+  end=+"+
 syn region sqlString	start=+'+  skip=+\\\\\|\\'+  end=+'+
 
+" Quotes:
+syn region sqlQuote	start=+[qQ]'\z([^\[(<{]\)+  end=+\z1'+
+syn region sqlQuote	start=+[qQ]'\[+ end=+\]'+
+syn region sqlQuote	start=+[qQ]'(+  end=+)'+
+syn region sqlQuote	start=+[qQ]'<+  end=+>'+
+syn region sqlQuote	start=+[qQ]'{+  end=+}'+
+
 " Numbers:
 syn match sqlNumber	"-\=\<\d*\.\=[0-9_]\>"
 
@@ -127,6 +134,7 @@ HiLink sqlOperator	sqlStatement
 HiLink sqlSpecial	Special
 HiLink sqlStatement	Statement
 HiLink sqlString	String
+HiLink sqlQuote String
 HiLink sqlType		Type
 HiLink sqlTodo		Todo
 
