@@ -53,13 +53,13 @@ syn keyword sqlType	boolean char character date float integer long
 syn keyword sqlType	mlslabel number raw rowid varchar varchar2 varray
 
 " Strings:
-syn region sqlString	start=+"+  skip=+\\\\\|\\"+  end=+"+
-syn region sqlString	start=+'+  skip=+\\\\\|\\'+  end=+'+
-syn region sqlString	matchgroup=Quote start=+n\?q'\z(.\)+  end=+\z1'+
-syn region sqlString	matchgroup=Quote start=+q'<+  end=+>'+
-syn region sqlString	matchgroup=Quote start=+q'{+  end=+}'+
-syn region sqlString	matchgroup=Quote start=+q'(+  end=+)'+
-syn region sqlString	matchgroup=Quote start=+q'\[+  end=+]'+
+syn region sqlString	matchgroup=Quote start=+"+  skip=+\\\\\|\\"+  end=+"+
+syn region sqlString	matchgroup=Quote start=+'+  skip=+\\\\\|\\'+  end=+'+
+syn region sqlString	matchgroup=Quote start=+n\?q'\z([^[(<{]\)+    end=+\z1'+
+syn region sqlString	matchgroup=Quote start=+n\?q'<+   end=+>'+
+syn region sqlString	matchgroup=Quote start=+n\?q'{+   end=+}'+
+syn region sqlString	matchgroup=Quote start=+n\?q'(+   end=+)'+
+syn region sqlString	matchgroup=Quote start=+n\?q'\[+  end=+]'+
 
 " Numbers:
 syn match sqlNumber	"-\=\<\d*\.\=[0-9_]\>"
