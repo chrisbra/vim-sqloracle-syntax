@@ -4,7 +4,12 @@
 " Repository:   https://github.com/chrisbra/vim-sqloracle-syntax
 " License:      Vim
 " Previous Maintainer:	Paul Moore
-" Last Change:	2016 Apr 3
+" Last Change:	2016 Jul 22
+
+" Changes:
+" 02.04.2016: Support for when keyword
+" 03.04.2016: Support for join related keywords
+" 22.07.2016: Support Oracle Q-Quote-Syntax
 
 if exists("b:current_syntax")
   finish
@@ -50,6 +55,11 @@ syn keyword sqlType	mlslabel number raw rowid varchar varchar2 varray
 " Strings:
 syn region sqlString	start=+"+  skip=+\\\\\|\\"+  end=+"+
 syn region sqlString	start=+'+  skip=+\\\\\|\\'+  end=+'+
+syn region sqlString	matchgroup=Quote start=+n\?q'\z(.\)+  end=+\z1'+
+syn region sqlString	matchgroup=Quote start=+q'<+  end=+>'+
+syn region sqlString	matchgroup=Quote start=+q'{+  end=+}'+
+syn region sqlString	matchgroup=Quote start=+q'(+  end=+)'+
+syn region sqlString	matchgroup=Quote start=+q'\[+  end=+]'+
 
 " Numbers:
 syn match sqlNumber	"-\=\<\d*\.\=[0-9_]\>"
@@ -119,6 +129,7 @@ syn keyword sqlTodo TODO FIXME XXX DEBUG NOTE contained
 
 " Define the default highlighting.
 command -nargs=+ HiLink hi def link <args>
+HiLink Quote            Special
 HiLink sqlComment	Comment
 HiLink sqlFunction	Function
 HiLink sqlKeyword	sqlSpecial
