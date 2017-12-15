@@ -68,6 +68,7 @@ syn match sqlNumber	"-\=\<\d*\.\=[0-9_]\>"
 " Comments:
 syn region sqlComment	start="/\*"  end="\*/" contains=sqlTodo,@Spell fold 
 syn match sqlComment	"--.*$" contains=sqlTodo,@Spell
+syn match sqlComment "^rem.*$" contains=sqlTodo,@Spell
 
 " Setup Folding:
 " this is a hack, to get certain statements folded.
