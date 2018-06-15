@@ -50,8 +50,10 @@ syn keyword sqlStatement truncate
 " next ones are contained, so folding works.
 syn keyword sqlStatement create update alter select insert contained
 
-syn keyword sqlType	boolean char character date float integer long
-syn keyword sqlType	mlslabel number raw rowid varchar varchar2 varray
+syn keyword sqlType	bfile blob boolean char character clob date datetime
+syn keyword sqlType	dec decimal float int integer long mlslabel nchar
+syn keyword sqlType	nclob number numeric nvarchar2 precision raw rowid
+syn keyword sqlType	smallint real timestamp urowid varchar varchar2 varray
 
 " Strings:
 syn region sqlString	matchgroup=Quote start=+n\?"+  skip=+\\\\\|\\"+  end=+"+
