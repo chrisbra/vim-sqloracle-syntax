@@ -4,7 +4,7 @@
 " Repository:   https://github.com/chrisbra/vim-sqloracle-syntax
 " License:      Vim
 " Previous Maintainer:	Paul Moore
-" Last Change:	2018 June 22
+" Last Change:	2018 June 24
 
 " Changes:
 " 02.04.2016: Support for when keyword
@@ -134,15 +134,15 @@ syn keyword sqlFunction	xmlparse xmlpatch xmlpi xmlquery xmlroot xmlsequence xml
 syn keyword sqlTodo TODO FIXME XXX DEBUG NOTE contained
 
 " Define the default highlighting.
-hi def link Quote            Special
-hi def link sqlComment	Comment
-hi def link sqlFunction	Function
-hi def link sqlKeyword	sqlSpecial
-hi def link sqlNumber	Number
-hi def link sqlOperator	sqlStatement
-hi def link sqlSpecial	Special
+hi def link Quote		Special
+hi def link sqlComment		Comment
+hi def link sqlFunction		Function
+hi def link sqlKeyword		sqlSpecial
+hi def link sqlNumber		Number
+hi def link sqlOperator		sqlStatement
+hi def link sqlSpecial		Special
 hi def link sqlStatement	Statement
-hi def link sqlString	String
+hi def link sqlString		String
 hi def link sqlType		Type
 hi def link sqlTodo		Todo
 
