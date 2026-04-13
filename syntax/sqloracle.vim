@@ -14,6 +14,7 @@
 " 22.06.2018: Remove skip part for sqlString (do not escape strings)
 " 10.02.2022: Add some more Oracle SQLKeywords https://github.com/vim/vim/issues/9737
 " (https://web.archive.org/web/20150922065035/https://mariadb.com/kb/en/sql-99/character-string-literals/)
+" 13.04.2026: Support for folding with common table expressions
 
 if exists("b:current_syntax")
   finish
@@ -34,7 +35,7 @@ syn keyword sqlKeyword	maxextents maxtrans mode modify monitoring
 syn keyword sqlKeyword	nocache nocompress nologging noparallel nowait of offline on online start
 syn keyword sqlKeyword	parallel successful synonym table tablespace then to trigger uid
 syn keyword sqlKeyword	unique user validate values view when whenever
-syn keyword sqlKeyword	where with within option order pctfree pctused privileges procedure
+syn keyword sqlKeyword	where within option order pctfree pctused privileges procedure
 syn keyword sqlKeyword	public resource return row rowlabel rownum rows
 syn keyword sqlKeyword	session share size smallint type using
 syn keyword sqlKeyword	join cross inner outer left right
@@ -51,7 +52,7 @@ syn keyword sqlStatement delete drop execute explain grant lock noaudit
 syn keyword sqlStatement rename revoke rollback savepoint set
 syn keyword sqlStatement truncate
 " next ones are contained, so folding works.
-syn keyword sqlStatement create update alter select insert contained
+syn keyword sqlStatement create update alter select insert with contained
 
 syn keyword sqlType	bfile blob boolean char character clob date datetime
 syn keyword sqlType	dec decimal float int integer long mlslabel nchar
@@ -79,7 +80,7 @@ syn match sqlComment "^rem.*$" contains=sqlTodo,@Spell
 " this is a hack, to get certain statements folded.
 " the keywords create/update/alter/select/insert need to
 " have contained option.
-syn region sqlFold start='^\s*\zs\c\(Create\|Update\|Alter\|Select\|Insert\)' end=';$\|^$' transparent fold contains=ALL
+syn region sqlFold start='^\s*\zs\c\(Create\|Update\|Alter\|Select\|Insert\|With\)' end=';$\|^$' transparent fold contains=ALL
 
 syn sync ccomment sqlComment
 
